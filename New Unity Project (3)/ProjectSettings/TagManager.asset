@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 'Black '
+    uniqueID: 1812749281
+    locked: 0
+  - name: Background
+    uniqueID: 1505544895
+    locked: 0
+  - name: Objects
+    uniqueID: 1637683651
+    locked: 0
+  - name: Player
+    uniqueID: 150584701
+    locked: 0
