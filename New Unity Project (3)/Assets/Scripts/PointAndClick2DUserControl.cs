@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PointAndClick2DUserControl : MonoBehaviour
 {
+    public bool arrived = false;
     public float speed = 4.5f;
     private Vector2 target;
+    public Interactives lastInteractedObject;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +20,33 @@ public class PointAndClick2DUserControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            target.y = transform.position.y;
+
+            if (lastInteractedObject.viewingGUI)
+            {
+                lastInteractedObject.viewingGUI = false;
+            }
+            else
+            {
+                target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                target.y = transform.position.y;
+            }
+            if (lastInteractedObject.clickedOnGUI)
+            {
+                lastInteractedObject.clickedOnGUI = false;
+            }
+            
         }
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+
+        if (transform.position.x == target.x)
+        {
+            arrived = true;
+        }
+        else
+        {
+            arrived = false;
+        }
+        
     }
 }
