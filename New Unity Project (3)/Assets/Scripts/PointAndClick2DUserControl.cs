@@ -21,7 +21,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (lastInteractedObject.viewingGUI)
+            if (lastInteractedObject != null && lastInteractedObject.viewingGUI)
             {
                 lastInteractedObject.viewingGUI = false;
             }
@@ -30,7 +30,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
                 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 target.y = transform.position.y;
             }
-            if (lastInteractedObject.clickedOnGUI)
+            if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
             {
                 lastInteractedObject.clickedOnGUI = false;
             }
