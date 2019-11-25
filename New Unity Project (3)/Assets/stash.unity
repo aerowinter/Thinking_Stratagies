@@ -614,7 +614,6 @@ GameObject:
   - component: {fileID: 783260847}
   - component: {fileID: 783260851}
   - component: {fileID: 783260850}
-  - component: {fileID: 783260849}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -652,27 +651,6 @@ Transform:
   m_Father: {fileID: 1977600557}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &783260849
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783260846}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &783260850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1422,6 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706460007}
   - component: {fileID: 1706460006}
+  - component: {fileID: 1706460008}
   m_Layer: 0
   m_Name: Glass_Of_Water_Model
   m_TagString: Untagged
@@ -1491,6 +1470,20 @@ Transform:
   m_Father: {fileID: 1220032815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706460008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706460005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e65a9643f7f854ba215b58a82dac4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemButton: {fileID: 7139272771105005253, guid: 5ab524d1c1e1ed54d822999102e3bee5,
+    type: 3}
 --- !u!1 &1791086860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,6 +2044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 547414448035446592, guid: 5ab524d1c1e1ed54d822999102e3bee5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab524d1c1e1ed54d822999102e3bee5, type: 3}
