@@ -29,6 +29,34 @@ public static class Inventory
         }
     }
 
+    static public void RemoveItem(GameObject item)
+    {
+        //find the gameObject in inventory
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] == item)
+            {
+                Debug.Log(item.name + " was removed");
+                inventory[i] = null;
+                break;
+            }
+        }
+    }
+
+    static public void RemoveItemByName(string name)
+    {
+        //find the first open slot in inventory
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i].name == name)
+            {
+                Debug.Log(name + " was removed");
+                inventory[i] = null;
+                break;
+            }
+        }
+    }
+
     static public bool FindItem(GameObject item)
     {
         for (int i = 0; i < inventory.Length; i++) {

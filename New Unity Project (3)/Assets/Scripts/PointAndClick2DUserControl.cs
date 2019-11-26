@@ -22,7 +22,15 @@ public class PointAndClick2DUserControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //if user did not click on an interactive item, reset last item the user clicked
+            if (lastInteractedObject != null && Interactives.clickedOnInteractive == false)
+            {
+                Debug.Log("did not click on interactive");
+                lastInteractedObject.clickedOn = false;
+                lastInteractedObject.viewingGUI = false;
+            }
 
+            Debug.Log("Point&Click");
             if (lastInteractedObject != null && lastInteractedObject.viewingGUI)
             {
                 lastInteractedObject.viewingGUI = false;

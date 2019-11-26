@@ -5,18 +5,20 @@ using UnityEngine;
 public class GlassOfWater : Interactives
 {
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     protected override void OnGUI()
     {
         base.OnGUI();
         if (viewingGUI)
         {
-            if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Take"))
+            if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Exit"))
+            {
+                clickedOn = false;
+                viewingGUI = false;
+                clickedOnGUI = true;
+                Debug.Log("clicked on exit");
+            }
+
+            if (GUI.Button(new Rect(screenPos.x, screenPos.y - 25, 50, 25), "Take"))
             {
                 clickedOn = false;
                 viewingGUI = false;

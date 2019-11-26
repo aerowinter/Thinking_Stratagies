@@ -5,6 +5,8 @@ using UnityEngine;
 
 abstract public class Interactives : MonoBehaviour
 {
+    public static bool clickedOnInteractive = false;
+
     public bool clickedOn = false;
     public bool clickedOnGUI = false;
     public bool viewingGUI = false;
@@ -25,17 +27,26 @@ abstract public class Interactives : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerScript.lastInteractedObject != null && playerScript.lastInteractedObject.viewingGUI)
+            clickedOnInteractive = true;
+        else
+            clickedOnInteractive = false;
     }
 
     void OnMouseDown()
     {
-        if (playerScript.lastInteractedObject != null)
-            playerScript.lastInteractedObject.clickedOn = false;
+        Debug.Log("interactives mouse down");
+        if (playerScript.lastInteractedObject == null || !playerScript.lastInteractedObject.viewingGUI)
+        {
+            clickedOnInteractive = true;
+            if (playerScript.lastInteractedObject != null)
+                playerScript.lastInteractedObject.clickedOn = false;
 
-        playerScript.lastInteractedObject = gameObject.GetComponent<Interactives>();
-        Debug.Log("clicked on " + playerScript.lastInteractedObject);
-        clickedOn = true;
+            playerScript.lastInteractedObject = gameObject.GetComponent<Interactives>();
+            Debug.Log("clicked on " + playerScript.lastInteractedObject);
+            clickedOn = true;
+        }
+        
     }
 
     protected virtual void OnGUI()
