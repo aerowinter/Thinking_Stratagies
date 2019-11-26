@@ -8,6 +8,8 @@ public class PointAndClick2DUserControl : MonoBehaviour
     public float speed = 4.5f;
     private Vector2 target;
     public Interactives lastInteractedObject;
+    public GameObject roomBackgroundModel;
+    public GameObject playerModel;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,15 @@ public class PointAndClick2DUserControl : MonoBehaviour
             }
             else
             {
+                float roomWidth = roomBackgroundModel.GetComponent<RectTransform>().rect.width;
+                float playerWidth = playerModel.GetComponent<RectTransform>().rect.width;
                 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                if (target.x > roomWidth / 2 - playerWidth / 2)
+                    target.x = roomWidth / 2 - playerWidth / 2;
+                else if (target.x < -roomWidth / 2 + playerWidth / 2)
+                    target.x = -roomWidth / 2 + playerWidth / 2;
+                    
                 target.y = transform.position.y;
             }
             if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
