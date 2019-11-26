@@ -22,9 +22,9 @@ public class GlassOfWater : Interactives
                 viewingGUI = false;
                 clickedOnGUI = true;
 
-                gameObject.SetActive(false);
-                Inventory.AddItem(gameObject);
                 Debug.Log("took glass of water");
+                Inventory.AddItem(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

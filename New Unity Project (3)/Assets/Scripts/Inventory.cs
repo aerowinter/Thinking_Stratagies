@@ -45,7 +45,7 @@ public static class Inventory
     {
         for (int i = 0; i < inventory.Length; i++)
         {
-            if (inventory[i].name == gameObjectName)
+            if (inventory[i] != null && inventory[i].name == gameObjectName)
             {
                 Debug.Log(inventory[i].name);
                 //we found item
