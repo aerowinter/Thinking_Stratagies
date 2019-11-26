@@ -6,15 +6,13 @@ public class PlayerInteract : MonoBehaviour
 {
     public GameObject currentInterObj = null;
     public InteractionObject currentInterObjScript = null;
-    public Inventory inventory;
-
 
     void Update()
     {
      if(Input.GetButtonDown ("Interact") && currentInterObj){
             //Check to see if this object is to be stored in inventory
             if (currentInterObjScript.inventory) {
-                inventory.AddItem(currentInterObj);
+                Inventory.AddItem(currentInterObj);
             }
 
            //Check to see if this object can be opened
@@ -25,7 +23,7 @@ public class PlayerInteract : MonoBehaviour
 
                     //Check to see if we have the object needed to unlock
                     //Search inventory for the item needed - if found unlock object
-                    if (inventory.FindItem(currentInterObjScript.itemNeeded)) {
+                    if (Inventory.FindItem(currentInterObjScript.itemNeeded)) {
                         //We found the item needed
                         currentInterObjScript.locked = false;
                         Debug.Log(currentInterObj.name + " was unlocked");
@@ -46,7 +44,7 @@ public class PlayerInteract : MonoBehaviour
 
                     //Check to see if we have the object needed to water
                     //Search inventory for the item needed - if found water object
-                    if (inventory.FindItem(currentInterObjScript.itemNeeded)) {
+                    if (Inventory.FindItem(currentInterObjScript.itemNeeded)) {
                         //We found the item needed
                         currentInterObjScript.locked = false;
                         Debug.Log(currentInterObj.name + " was watered");

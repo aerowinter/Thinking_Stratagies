@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public static class Inventory
 {
     //array that hold all our items
-    public GameObject[] inventory = new GameObject[10];
+    static public GameObject[] inventory = new GameObject[10];
 
-    public void AddItem(GameObject item ){
+    static public void AddItem(GameObject item ){
 
         bool itemAdded = false;
 
@@ -29,10 +29,25 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool FindItem(GameObject item)
+    static public bool FindItem(GameObject item)
     {
         for (int i = 0; i < inventory.Length; i++) {
             if(inventory[i] == item) {
+                //we found item
+                return true;
+            }
+        }
+        //item not found
+        return false;
+    }
+
+    static public bool FindItemByName(string gameObjectName)
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i].name == gameObjectName)
+            {
+                Debug.Log(inventory[i].name);
                 //we found item
                 return true;
             }

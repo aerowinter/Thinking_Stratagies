@@ -301,6 +301,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &429914459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3784954894641057542}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3784954894641057543}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &450051078
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +409,7 @@ RectTransform:
   m_Children:
   - {fileID: 880254329}
   - {fileID: 1319062602}
-  - {fileID: 3784954894641057543}
+  - {fileID: 782123667}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -520,7 +536,7 @@ Camera:
   far clip plane: 1000
   field of view: 81
   orthographic: 1
-  orthographic size: 8.1443
+  orthographic size: 11.015055
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -602,6 +618,37 @@ EdgeCollider2D:
   - {x: 3.1776514, y: -4.547804}
   - {x: 3.2040367, y: -2.4233673}
   - {x: 9.0473585, y: -2.4661698}
+--- !u!1 &782123666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3784954894641057542}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782123667}
+  m_Layer: 0
+  m_Name: Water_Button (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &782123667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3784954894641057542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782123666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3784954894641057543}
+  m_Father: {fileID: 450051082}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &783260846
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +708,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783260846}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -711,9 +758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bb4d0a13a68e5459c2f83fb1691fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00
-  slots:
-  - {fileID: 880254328}
 --- !u!1 &792850451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,8 +1108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e65a9643f7f854ba215b58a82dac4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemButton: {fileID: 7139272771105005253, guid: 5ab524d1c1e1ed54d822999102e3bee5,
-    type: 3}
 --- !u!1 &1308700093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 450051082}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7139272771105005253, guid: 5ab524d1c1e1ed54d822999102e3bee5,
         type: 3}
       propertyPath: m_Name
@@ -2054,9 +2100,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab524d1c1e1ed54d822999102e3bee5, type: 3}
---- !u!224 &3784954894641057543 stripped
+--- !u!224 &3784954894641057543
 RectTransform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 5539567517233235854, guid: 5ab524d1c1e1ed54d822999102e3bee5,
     type: 3}
   m_PrefabInstance: {fileID: 3784954894641057542}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429914459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 782123667}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

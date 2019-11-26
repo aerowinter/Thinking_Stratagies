@@ -16,12 +16,15 @@ public class GlassOfWater : Interactives
         base.OnGUI();
         if (viewingGUI)
         {
-            if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Click"))
+            if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Take"))
             {
                 clickedOn = false;
                 viewingGUI = false;
                 clickedOnGUI = true;
-                Debug.Log("clicked on button");
+
+                gameObject.SetActive(false);
+                Inventory.AddItem(gameObject);
+                Debug.Log("took glass of water");
             }
         }
     }
