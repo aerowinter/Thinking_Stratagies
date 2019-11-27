@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7609d04a132f2344bc35881452680a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCurrentlyInteractive: 1
+  isCurrentlyInteractive: 0
   canTake: 0
   clickedOn: 0
   clickedOnGUI: 0
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09ed2581be351243abf72a06075c8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCurrentlyInteractive: 1
+  isCurrentlyInteractive: 0
   canTake: 0
   clickedOn: 0
   clickedOnGUI: 0
