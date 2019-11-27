@@ -6,6 +6,7 @@ public static class Inventory
 {
     //array that hold all our items
     static public GameObject[] inventory = new GameObject[10];
+    static public bool newItem = false;
 
     static public void AddItem(GameObject item ){
 
@@ -24,9 +25,12 @@ public static class Inventory
         }
 
         //Inventory full
-        if (!itemAdded) {
+        if (!itemAdded)
+        {
             Debug.Log("Inventory is full - item not added");
         }
+        else
+            newItem = true;
     }
 
     static public void RemoveItem(GameObject item)

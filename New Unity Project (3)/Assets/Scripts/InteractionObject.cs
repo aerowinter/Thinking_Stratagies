@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractionObject : MonoBehaviour
 {
+    //FUNCTION OF CLASS BEING FILLED BY Interactives.cs, MOVE ANIMATION TRIGGERS TO THAT CLASS
+
     public bool inventory;   //If true this object can be stored in inventory
     public bool openable;    //If true this object can be opened
     public bool waterable;   //If true this object can be watered

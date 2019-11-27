@@ -10,14 +10,6 @@ public class PottedPlant : Interactives
         base.OnGUI();
         if (viewingGUI)
         {
-            if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Exit"))
-            {
-                clickedOn = false;
-                viewingGUI = false;
-                clickedOnGUI = true;
-                Debug.Log("clicked on exit");
-            }
-
             if (Inventory.FindItemByName("Glass_Of_Water"))
             {
                 if (GUI.Button(new Rect(screenPos.x, screenPos.y - 25, 70, 25), "Use water"))
