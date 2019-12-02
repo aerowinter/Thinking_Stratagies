@@ -19,10 +19,12 @@ abstract public class Interactives : MonoBehaviour
     public GameObject player;
     public PointAndClick2DUserControl playerScript;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
+
         playerScript = player.GetComponent<PointAndClick2DUserControl>();
         Vector3 pos = gameObject.transform.position;
         pos.y = -pos.y;
