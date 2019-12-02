@@ -36,24 +36,15 @@ public class PointAndClick2DUserControl : MonoBehaviour
 
             Debug.Log("Point&Click");
             if (lastInteractedObject != null && lastInteractedObject.viewingGUI)
-            {
                 lastInteractedObject.viewingGUI = false;
-            }
             else
-            {
                 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                MoveHorizontallyTowards(target.x);
 
-            }
             if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
-            {
                 lastInteractedObject.clickedOnGUI = false;
-            }
-            
+
         }
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-
+        
         if (transform.position.x == target.x)
         {
             anim.SetBool("arrived", true);
@@ -61,15 +52,19 @@ public class PointAndClick2DUserControl : MonoBehaviour
         }
         else
         {
-            
-
             anim.SetBool("arrived", false);
             arrived = false;
+
+            if (target.x > transform.position.x)
+                anim.SetBool("wentRight", true);
+            else
+                anim.SetBool("wentRight", false);
         }
-        
+        MoveHorizontallyTowards(ref target.x);
+
     }
 
-    void MoveHorizontallyTowards(float xDestination)
+    void MoveHorizontallyTowards(ref float xDestination)
     {
         float roomWidth = roomBackgroundModel.GetComponent<RectTransform>().rect.width;
         float playerWidth = playerModel.GetComponent<RectTransform>().rect.width;
@@ -79,10 +74,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
         else if (xDestination < -roomWidth / 2 + playerWidth / 2)
             xDestination = -roomWidth / 2 + playerWidth / 2;
 
-        if (xDestination > transform.position.x)
-            anim.SetBool("wentRight", true);
-        else
-            anim.SetBool("wentRight", false);
+        
 
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(xDestination, transform.position.y), speed * Time.deltaTime);
     }

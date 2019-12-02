@@ -578,6 +578,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1641709300895335151, guid: 2d2567dddddff1740b25401c6713b9cc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1463921886652916701, guid: 2d2567dddddff1740b25401c6713b9cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -882,20 +887,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1162112518
-Transform:
+--- !u!224 &1162112518
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162112516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10083553, y: 2.8872972, z: 195.73897}
+  m_LocalPosition: {x: 0, y: 0, z: 195.73897}
   m_LocalScale: {x: 0.724546, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 993081613}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.10083553, y: 2.8872972}
+  m_SizeDelta: {x: 25.006105, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1202389868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,24 +1160,29 @@ MonoBehaviour:
   arrived: 0
   speed: 4.5
   lastInteractedObject: {fileID: 0}
-  roomBackgroundModel: {fileID: 0}
+  roomBackgroundModel: {fileID: 1162112516}
   playerModel: {fileID: 857426082}
   anim: {fileID: 857426081}
---- !u!4 &1444246050
-Transform:
+--- !u!224 &1444246050
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444246048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 9.93, z: 196.73897}
+  m_LocalPosition: {x: 0, y: 0, z: 196.73897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 857426083}
   m_Father: {fileID: 204600130}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.59, y: 9.93}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1545033013
 GameObject:
   m_ObjectHideFlags: 0
