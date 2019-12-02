@@ -11,6 +11,8 @@ public class PointAndClick2DUserControl : MonoBehaviour
     public GameObject roomBackgroundModel;
     public GameObject playerModel;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
                     target.x = -roomWidth / 2 + playerWidth / 2;
                     
                 target.y = transform.position.y;
+
             }
             if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
             {
@@ -59,10 +62,17 @@ public class PointAndClick2DUserControl : MonoBehaviour
 
         if (transform.position.x == target.x)
         {
+            anim.SetBool("arrived", true);
             arrived = true;
         }
         else
         {
+            if (target.x > transform.position.x)
+                anim.SetBool("wentRight", true);
+            else
+                anim.SetBool("wentRight", false);
+
+            anim.SetBool("arrived", false);
             arrived = false;
         }
         

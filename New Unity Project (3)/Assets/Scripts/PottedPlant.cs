@@ -18,7 +18,7 @@ public class PottedPlant : Interactives
                     viewingGUI = false;
                     clickedOnGUI = true;
 
-                    anim.SetTrigger("water");
+                    anim.SetBool("water", true);
 
                     Inventory.RemoveItemByName("Glass_Of_Water");
                     //TODO put animation for plant growing here & crash through the floor
