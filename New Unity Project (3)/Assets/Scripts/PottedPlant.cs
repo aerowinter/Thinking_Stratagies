@@ -20,8 +20,8 @@ public class PottedPlant : Interactives
                     clickedOnGUI = true;
 
                     anim.SetBool("water", true);
-                    gameObject.GetComponent<CapsuleCollider>().height =
-                        gameObject.GetComponent<CapsuleCollider>().radius;
+                    gameObject.GetComponent<CapsuleCollider2D>().size =
+                        new Vector2(gameObject.GetComponent<CapsuleCollider2D>().size.y, gameObject.GetComponent<CapsuleCollider2D>().size.y);
 
                     Inventory.RemoveItemByName("Glass_Of_Water");
                 }
@@ -35,7 +35,7 @@ public class PottedPlant : Interactives
                     viewingGUI = false;
                     clickedOnGUI = true;
 
-                    SceneManager.LoadScene("Living Room");
+                    SceneManager.LoadScene("LivingRoom");
                 }
             }
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HouseGameController : MonoBehaviour
+public class BedroomGameController : MonoBehaviour
 {
     public GameObject Player;
     public GameObject PottedPlant;
