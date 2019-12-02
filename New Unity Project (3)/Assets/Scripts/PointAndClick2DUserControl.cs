@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PointAndClick2DUserControl : MonoBehaviour
 {
@@ -39,16 +41,8 @@ public class PointAndClick2DUserControl : MonoBehaviour
             }
             else
             {
-                float roomWidth = roomBackgroundModel.GetComponent<RectTransform>().rect.width;
-                float playerWidth = playerModel.GetComponent<RectTransform>().rect.width;
                 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                if (target.x > roomWidth / 2 - playerWidth / 2)
-                    target.x = roomWidth / 2 - playerWidth / 2;
-                else if (target.x < -roomWidth / 2 + playerWidth / 2)
-                    target.x = -roomWidth / 2 + playerWidth / 2;
-                    
-                target.y = transform.position.y;
+                MoveHorizontallyTowards(target.x);
 
             }
             if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
@@ -67,14 +61,29 @@ public class PointAndClick2DUserControl : MonoBehaviour
         }
         else
         {
-            if (target.x > transform.position.x)
-                anim.SetBool("wentRight", true);
-            else
-                anim.SetBool("wentRight", false);
+            
 
             anim.SetBool("arrived", false);
             arrived = false;
         }
         
+    }
+
+    void MoveHorizontallyTowards(float xDestination)
+    {
+        float roomWidth = roomBackgroundModel.GetComponent<RectTransform>().rect.width;
+        float playerWidth = playerModel.GetComponent<RectTransform>().rect.width;
+
+        if (xDestination > roomWidth / 2 - playerWidth / 2)
+            xDestination = roomWidth / 2 - playerWidth / 2;
+        else if (xDestination < -roomWidth / 2 + playerWidth / 2)
+            xDestination = -roomWidth / 2 + playerWidth / 2;
+
+        if (xDestination > transform.position.x)
+            anim.SetBool("wentRight", true);
+        else
+            anim.SetBool("wentRight", false);
+
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(xDestination, transform.position.y), speed * Time.deltaTime);
     }
 }

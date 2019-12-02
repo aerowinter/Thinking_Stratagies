@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HouseGameController : MonoBehaviour
+public class BedroomGameController : MonoBehaviour
 {
     public GameObject Player;
     public GameObject PottedPlant;
@@ -44,6 +44,7 @@ public class HouseGameController : MonoBehaviour
             Inventory.newItem = false;
             if(Inventory.FindItem(Ball))
             {
+                Inventory.RemoveItem(Ball);
                 StartCoroutine(FadeTextToZeroAlpha(2.5f, tutorialText));
                 PottedPlant.GetComponent<PottedPlant>().isCurrentlyInteractive = true;
                 GlassOfWater.GetComponent<GlassOfWater>().isCurrentlyInteractive = true;
