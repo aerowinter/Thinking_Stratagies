@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Kids bedroom1.unity
     guid: b4a715eb9219b9944bfd14350abe29b8
   - enabled: 1
-    path: Assets/Scenes/LivingRoom.unity
+    path: Assets/Scenes/Living Room.unity
     guid: a9c2acf543a9b814889339e6dc1a83f4
   m_configObjects: {}

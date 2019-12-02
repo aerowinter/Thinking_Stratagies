@@ -44,6 +44,7 @@ public class HouseGameController : MonoBehaviour
             Inventory.newItem = false;
             if(Inventory.FindItem(Ball))
             {
+                Inventory.RemoveItem(Ball);
                 StartCoroutine(FadeTextToZeroAlpha(2.5f, tutorialText));
                 PottedPlant.GetComponent<PottedPlant>().isCurrentlyInteractive = true;
                 GlassOfWater.GetComponent<GlassOfWater>().isCurrentlyInteractive = true;

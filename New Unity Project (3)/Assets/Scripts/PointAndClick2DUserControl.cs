@@ -47,7 +47,12 @@ public class PointAndClick2DUserControl : MonoBehaviour
                     target.x = roomWidth / 2 - playerWidth / 2;
                 else if (target.x < -roomWidth / 2 + playerWidth / 2)
                     target.x = -roomWidth / 2 + playerWidth / 2;
-                    
+
+                if (target.x > transform.position.x)
+                    anim.SetBool("wentRight", true);
+                else
+                    anim.SetBool("wentRight", false);
+
                 target.y = transform.position.y;
 
             }
@@ -67,10 +72,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
         }
         else
         {
-            if (target.x > transform.position.x)
-                anim.SetBool("wentRight", true);
-            else
-                anim.SetBool("wentRight", false);
+            
 
             anim.SetBool("arrived", false);
             arrived = false;
