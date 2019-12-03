@@ -16,6 +16,7 @@ public class BedroomGameController : MonoBehaviour
     public Text timerText;
     public bool timerStart = false;
     public float timer;
+    
 
     // Start is called before the first frame update
     void Start()
