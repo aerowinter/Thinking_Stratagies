@@ -87,4 +87,17 @@ public static class Inventory
         //item not found
         return false;
     }
+
+    static public GameObject getItemByName(string gameObjectName)
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] != null && inventory[i].name == gameObjectName)
+            {
+                return inventory[i];
+            }
+        }
+        //item not found
+        return null;
+    }
 }

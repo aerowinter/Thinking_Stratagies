@@ -42,9 +42,8 @@ public class BedroomGameController : MonoBehaviour
         if (Inventory.newItem)
         {
             Inventory.newItem = false;
-            if(Inventory.FindItem(Ball))
+            if(Inventory.FindItem(Ball) && tutorialText.color.a != 0)
             {
-                Inventory.RemoveItem(Ball);
                 StartCoroutine(FadeTextToZeroAlpha(2.5f, tutorialText));
                 PottedPlant.GetComponent<PottedPlant>().isCurrentlyInteractive = true;
                 GlassOfWater.GetComponent<GlassOfWater>().isCurrentlyInteractive = true;

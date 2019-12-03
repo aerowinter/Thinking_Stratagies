@@ -33,7 +33,7 @@ abstract public class Interactives : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (playerScript.lastInteractedObject != null && playerScript.lastInteractedObject.viewingGUI)
             clickedOnInteractive = true;
