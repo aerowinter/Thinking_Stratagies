@@ -29,12 +29,15 @@ public class PottedPlant : Interactives
 
             if (anim.GetBool("water"))
             {
-                if (GUI.Button(new Rect(screenPos.x, screenPos.y - 50, 70, 25), "Jump down"))
+                if (GUI.Button(new Rect(screenPos.x, screenPos.y - 25, 70, 25), "Jump down"))
                 {
                     clickedOn = false;
                     viewingGUI = false;
                     clickedOnGUI = true;
 
+                    //Scene sceneToLoad = SceneManager.GetSceneByName("LivingRoom");
+
+                    //SceneManager.MoveGameObjectToScene(Inventory.GetItemByName("Ball"), sceneToLoad);
                     SceneManager.LoadScene("LivingRoom");
                 }
             }

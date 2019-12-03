@@ -18,7 +18,6 @@ public class MatchBox : Interactives
     {
         base.Start();
         speed = 1.2f;
-        Ball = Inventory.GetItemByName("Ball");
         BallScript = Ball.GetComponent<Ball>();
     }
 
