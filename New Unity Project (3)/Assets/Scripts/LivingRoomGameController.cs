@@ -8,6 +8,7 @@ public class LivingRoomGameController : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Ball;
+    public GameObject Match_Box;
 
     public PointAndClick2DUserControl PlayerScript;
 
