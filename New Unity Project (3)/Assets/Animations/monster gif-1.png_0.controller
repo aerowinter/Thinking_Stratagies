@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: taken
+    m_ConditionEvent: start
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8937722186453245088}
@@ -86,7 +86,7 @@ AnimatorController:
   m_Name: monster gif-1.png_0
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: taken
+  - m_Name: start
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -113,7 +113,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MonsterUnderBed
-  m_Speed: 1
+  m_Speed: 0.0718
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -130,4 +130,4 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: timer

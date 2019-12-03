@@ -1282,14 +1282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412af3eb0574caf448837aba4bc1e871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCurrentlyInteractive: 0
-  canTake: 0
-  clickedOn: 0
-  clickedOnGUI: 0
-  viewingGUI: 0
-  player: {fileID: 0}
-  playerScript: {fileID: 0}
-  anim: {fileID: 0}
   Anim: {fileID: 0}
 --- !u!1 &1146142928
 GameObject:
@@ -2042,8 +2034,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 180}
-  m_SizeDelta: {x: 90, y: 30}
+  m_AnchoredPosition: {x: 220, y: 180}
+  m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782264905
 MonoBehaviour:
@@ -2461,6 +2453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 783260846}
+  Monster: {fileID: 1121146674}
   PottedPlant: {fileID: 1664546511}
   GlassOfWater: {fileID: 1220032814}
   Ball: {fileID: 1903056909}

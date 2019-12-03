@@ -1,34 +1,25 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class LivingRoomGameController : MonoBehaviour
+public class LivingRoomGameController : GameController
 {
-    public GameObject Player;
-    public GameObject Ball;
     public GameObject Match_Box;
-
-    public PointAndClick2DUserControl PlayerScript;
 
     private const float FLOOR = -2.47f;
 
     private double speed;
 
-    public Text timerText;
-    public bool timerStart = true;
-    public float timer;
-
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        timer = 30.0f;
+        base.Start();
+        timerStart = true;
 
-        PlayerScript = Player.GetComponent<PointAndClick2DUserControl>();
+        
         PlayerScript.enabled = false;
-        PlayerScript.lastInteractedObject = null;
         speed = 3;
 
         Inventory.AddItem(Ball);
@@ -36,20 +27,9 @@ public class LivingRoomGameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if (timerStart && timer < 0)
-        {
-            timer -= Time.deltaTime;
-            TimeSpan timeLeft = TimeSpan.FromSeconds(timer);
-            timerText.text = timeLeft.ToString("ss':'fff");
-        }
-        if (timer < 0)
-        {
-            //GAME OVER sequence
-            timer = 0f;
-            Debug.Log("Game Over");
-        }
+        base.Update();
 
         if (Player.transform.position.y != FLOOR)
         {
@@ -60,4 +40,6 @@ public class LivingRoomGameController : MonoBehaviour
         else
             PlayerScript.enabled = true;
     }
+
+    
 }

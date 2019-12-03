@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : Interactives
+public class Monster : MonoBehaviour
 {
   public Animator Anim;
     // Start is called before the first frame update
-    protected override void Start()
+    void Start()
     {
         Anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    protected override void Update()
+    public void StartAnim()
     {
-        if (Inventory.FindItemByName("Glass_Of_Water"))
-        {
-            Anim.SetBool("taken", true);
-        }
+        Anim.SetBool("start", true);
     }
 }

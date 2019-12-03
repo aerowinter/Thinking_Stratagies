@@ -4,42 +4,25 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class BedroomGameController : MonoBehaviour
+public class BedroomGameController : GameController
 {
-    public GameObject Player;
+    public GameObject Monster;
     public GameObject PottedPlant;
     public GameObject GlassOfWater;
-    public GameObject Ball;
 
-    public Text tutorialText;
-
-    public Text timerText;
-    public bool timerStart = false;
-    public float timer;
-    
+    public Text tutorialText; 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        timer = 30.0f;
-        
+        base.Start();
+        timerStart = false;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if (timerStart && timer < 0)
-        {
-            timer -= Time.deltaTime;
-            TimeSpan timeLeft = TimeSpan.FromSeconds(timer);
-            timerText.text = timeLeft.ToString("ss':'fff");
-        }
-        if (timer < 0)
-        //GAME OVER sequence
-        {
-            timer = 0f;
-            Debug.Log("Game Over");
-        }
+        base.Update();
 
         //check if inventory added a new item to progress the scene
         if (Inventory.newItem)
@@ -52,6 +35,7 @@ public class BedroomGameController : MonoBehaviour
                 PottedPlant.GetComponent<PottedPlant>().isCurrentlyInteractive = true;
                 GlassOfWater.GetComponent<GlassOfWater>().isCurrentlyInteractive = true;
                 timerStart = true;
+                Monster.GetComponent<Monster>().StartAnim();
             }
         }
 
@@ -65,6 +49,5 @@ public class BedroomGameController : MonoBehaviour
                 yield return null;
             }
         }
-
     }
 }
