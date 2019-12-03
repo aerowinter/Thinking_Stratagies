@@ -48,9 +48,9 @@ public class MatchBox : Interactives
                     viewingGUI = false;
                     clickedOnGUI = true;
 
-
-                    Ball.transform.position = player.transform.position;
                     Ball.SetActive(true);
+                    Ball.transform.position = player.transform.position;
+                    
                     BallScript.ThrowAt(gameObject);
                     Inventory.RemoveItem(Ball);
                 }

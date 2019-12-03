@@ -36,22 +36,27 @@ public abstract class Interactives : MonoBehaviour
     protected virtual void Update()
     {
         if (playerScript.lastInteractedObject != null && playerScript.lastInteractedObject.viewingGUI)
+        {
+            if (clickedOnInteractive == false)
+                Debug.Log("clickedOnInteractive to true");
             clickedOnInteractive = true;
+        }
         else
         {
             if(clickedOnInteractive == true)
                 Debug.Log("clickedOnInteractive to false");
             clickedOnInteractive = false;
         }
+
+        //OnMouseDown();
     }
 
-    void OnMouseDown()
+    protected void OnMouseDown()
     {
         if (isCurrentlyInteractive)
         {
             if (playerScript.lastInteractedObject == null || !playerScript.lastInteractedObject.viewingGUI)
             {
-                Debug.Log("interactives mouse down");
                 clickedOnInteractive = true;
                 if (playerScript.lastInteractedObject != null)
                     playerScript.lastInteractedObject.clickedOn = false;

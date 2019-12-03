@@ -7,6 +7,8 @@ using UnityEngine;
 public class LivingRoomGameController : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Ball;
+
     public PointAndClick2DUserControl PlayerScript;
 
     private const float FLOOR = -2.47f;
@@ -21,7 +23,7 @@ public class LivingRoomGameController : MonoBehaviour
         PlayerScript.lastInteractedObject = null;
         speed = 3;
 
-        Inventory.AddItem(GameObject.Find("Ball"));
+        Inventory.AddItem(Ball);
 
     }
 

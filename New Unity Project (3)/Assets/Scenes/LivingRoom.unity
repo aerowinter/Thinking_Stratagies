@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1444246048}
+  Ball: {fileID: 1555115456}
   PlayerScript: {fileID: 0}
 --- !u!1 &207791195
 GameObject:
@@ -1591,7 +1592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1555115457
 Transform:
   m_ObjectHideFlags: 0
