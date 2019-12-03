@@ -28,16 +28,18 @@ public class BedroomGameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timerStart)
+        if (timerStart && timer < 0)
         {
             timer -= Time.deltaTime;
             TimeSpan timeLeft = TimeSpan.FromSeconds(timer);
             timerText.text = timeLeft.ToString("ss':'fff");
         }
-
         if (timer < 0)
-            //GAME OVER sequence
+        //GAME OVER sequence
+        {
+            timer = 0f;
             Debug.Log("Game Over");
+        }
 
         //check if inventory added a new item to progress the scene
         if (Inventory.newItem)
