@@ -9,7 +9,7 @@ public class LivingRoomGameController : MonoBehaviour
     public GameObject Player;
     public PointAndClick2DUserControl PlayerScript;
 
-    private const float PLAYER_Y = -2.47f;
+    private const float FLOOR = -2.47f;
 
     private double speed;
 
@@ -26,11 +26,11 @@ public class LivingRoomGameController : MonoBehaviour
     void Update()
     {
 
-        if (Player.transform.position.y != PLAYER_Y)
+        if (Player.transform.position.y != FLOOR)
         {
             speed *= 1.1;
             Player.transform.position = Vector2.MoveTowards(Player.transform.position,
-                new Vector2(Player.transform.position.x, PLAYER_Y), (float) speed * Time.deltaTime);
+                new Vector2(Player.transform.position.x, FLOOR), (float) speed * Time.deltaTime);
         }
         else
             PlayerScript.enabled = true;

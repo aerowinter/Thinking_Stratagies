@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class Interactives : MonoBehaviour
+public abstract class Interactives : MonoBehaviour
 {
     public bool isCurrentlyInteractive = false;
 
@@ -33,7 +33,7 @@ abstract public class Interactives : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (playerScript.lastInteractedObject != null && playerScript.lastInteractedObject.viewingGUI)
             clickedOnInteractive = true;

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MatchBox : Interactives
 {
-    public GameObject Player;
     public GameObject Ball;
     public Ball BallScript;
 
@@ -19,7 +18,7 @@ public class MatchBox : Interactives
     {
         base.Start();
         speed = 1.2f;
-        Ball = Inventory.getItemByName("Ball");
+        Ball = Inventory.GetItemByName("Ball");
         BallScript = Ball.GetComponent<Ball>();
     }
 
@@ -51,7 +50,7 @@ public class MatchBox : Interactives
                     clickedOnGUI = true;
 
 
-                    Ball.transform.position = Player.transform.position;
+                    Ball.transform.position = player.transform.position;
                     Ball.SetActive(true);
                     BallScript.ThrowAt(gameObject);
                     Inventory.RemoveItem(Ball);
