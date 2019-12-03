@@ -32,6 +32,13 @@ public abstract class Interactives : MonoBehaviour
         Debug.Log(screenPos);
     }
 
+    protected void RecalculateScreenPos()
+    {
+        Vector3 pos = gameObject.transform.position;
+        pos.y = -pos.y;
+        screenPos = Camera.main.WorldToScreenPoint(pos);
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
@@ -41,7 +48,7 @@ public abstract class Interactives : MonoBehaviour
                 Debug.Log("clickedOnInteractive to true");
             clickedOnInteractive = true;
         }
-        else
+        else if(!playerScript.clicked)
         {
             if(clickedOnInteractive == true)
                 Debug.Log("clickedOnInteractive to false");
@@ -59,11 +66,17 @@ public abstract class Interactives : MonoBehaviour
             {
                 clickedOnInteractive = true;
                 if (playerScript.lastInteractedObject != null)
+                {
+                    Debug.Log("last interacted object was not null");
                     playerScript.lastInteractedObject.clickedOn = false;
+                }
+                    
+
 
                 playerScript.lastInteractedObject = gameObject.GetComponent<Interactives>();
                 Debug.Log("clicked on " + playerScript.lastInteractedObject);
                 clickedOn = true;
+                playerScript.clicked = true;
             }
         }
     }

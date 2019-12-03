@@ -6,6 +6,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class PointAndClick2DUserControl : MonoBehaviour
 {
+    public bool clicked = false;
     public bool arrived = false;
     public float speed = 4.5f;
     private Vector2 target;
@@ -42,7 +43,7 @@ public class PointAndClick2DUserControl : MonoBehaviour
 
             if (lastInteractedObject != null && lastInteractedObject.clickedOnGUI)
                 lastInteractedObject.clickedOnGUI = false;
-
+            clicked = false;
         }
         
         if (transform.position.x == target.x)

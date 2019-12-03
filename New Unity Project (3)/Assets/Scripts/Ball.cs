@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ball : Interactives
 {
     public Vector2 target;
+    public float speed = 13f;
     public bool thrown = false;
     public bool arrived = false;
 
@@ -21,11 +22,13 @@ public class Ball : Interactives
         base.Update();
         if (thrown)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, (4.5f / Time.deltaTime));
+            transform.position = Vector2.MoveTowards(transform.position, target, (speed * Time.deltaTime));
+            speed = speed / 1.03f;
             if ((Vector2) transform.position == target)
             {
                 arrived = true;
                 thrown = false;
+                isCurrentlyInteractive = false;
             }
         }
     }

@@ -12,7 +12,7 @@ public class MatchBox : Interactives
 
     public double speed;
 
-    private const float FLOOR = -2.47f;
+    private const float FLOOR = -4.2f;
 
     protected override void Start()
     {
@@ -31,7 +31,10 @@ public class MatchBox : Interactives
             transform.position = Vector2.MoveTowards(transform.position,
                 new Vector2(transform.position.x, FLOOR), (float)speed * Time.deltaTime);
             if (transform.position.y == FLOOR)
+            {
+                RecalculateScreenPos();
                 canTake = true;
+            }
         }
     }
 
