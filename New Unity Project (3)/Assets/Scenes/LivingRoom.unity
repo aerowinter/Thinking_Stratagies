@@ -519,11 +519,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1444246048}
   Ball: {fileID: 1555115456}
-  Match_Box: {fileID: 0}
   PlayerScript: {fileID: 0}
-  timerText: {fileID: 0}
+  timerText: {fileID: 974110497}
   timerStart: 1
   timer: 0
+  Match_Box: {fileID: 935659563}
 --- !u!1 &207791195
 GameObject:
   m_ObjectHideFlags: 0
