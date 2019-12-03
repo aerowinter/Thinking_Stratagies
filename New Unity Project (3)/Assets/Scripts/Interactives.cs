@@ -70,7 +70,6 @@ public abstract class Interactives : MonoBehaviour
 
         if (viewingGUI)
         {
-            Debug.Log("x: " + screenPos.x + ", y: " + screenPos.y);
 
             if (GUI.Button(new Rect(screenPos.x, screenPos.y, 50, 25), "Exit"))
             {

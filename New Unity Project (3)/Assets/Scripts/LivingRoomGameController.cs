@@ -18,7 +18,10 @@ public class LivingRoomGameController : MonoBehaviour
     {
         PlayerScript = Player.GetComponent<PointAndClick2DUserControl>();
         PlayerScript.enabled = false;
+        PlayerScript.lastInteractedObject = null;
         speed = 3;
+
+        Inventory.AddItem(GameObject.Find("Ball"));
 
     }
 
