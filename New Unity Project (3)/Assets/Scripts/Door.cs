@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Door : Interactives
 {
-
+    protected override void Start()
+    {
+        base.Start();
+        isCurrentlyInteractive = true;
+    }
     // Update is called once per frame
     protected override void Update()
     {
