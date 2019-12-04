@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Logs : Interactives
 {
+    public GameObject ashes;
     protected override void OnGUI()
     {
         isCurrentlyInteractive = true;
@@ -24,16 +25,7 @@ public class Logs : Interactives
                         new Vector2(gameObject.GetComponent<BoxCollider2D>().size.y, gameObject.GetComponent<BoxCollider2D>().size.y);
 
                     Inventory.RemoveItemByName("Match_Box");
-                }
-            }
-            if (anim.GetBool("fire"))
-            {
-                if (GUI.Button(new Rect(screenPos.x, screenPos.y - 25, 70, 25), "Take key"))
-                {
-                    clickedOn = false;
-                    viewingGUI = false;
-                    clickedOnGUI = true;
-
+                    Inventory.AddItem(ashes);
                 }
             }
         }
